@@ -17,16 +17,8 @@ Enables pinch to zoom, double tap and swiping between files.
 
 In XCode, in the project navigator, select your project. Add `QuickLook.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `rn-files-view-ios` and add `RNFilesViewIos.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNFilesViewIos.a` and `QuickLook.framework` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
+*Podspec has been updated and linking should be automatic. 'Linking/import' errors that may occur can be solved with importing the package in the Podfile* 
+'pod 'RNFilesViewIos', :path => '../node_modules/rn-files-view-ios''
 
 ## Usage
 ```javascript
@@ -53,4 +45,6 @@ render() {
 	/>;
 }
 ```
-  
+### Thanks
+
+Thanks and mentions go to Guy Blank (github: blankg) - whose work I forked and adapted for my needs.
