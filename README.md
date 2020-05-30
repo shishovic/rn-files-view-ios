@@ -5,8 +5,6 @@ Files viewer component that wraps the iOS QuickLook preview - supports images, p
 
 Enables pinch to zoom, double tap and swiping between files.
 
-![](https://github.com/blankg/rn-files-view-ios/blob/master/filesviewer4.gif?raw=true)
-
 ## Getting started
 
 `$ npm install rn-files-view-ios --save`
