@@ -14,6 +14,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[self.navigationController toolbar] setHidden:NO];
     if (self.previewBackgroundColor != nil) {
         [self.view setBackgroundColor:self.previewBackgroundColor];
     }
@@ -24,6 +25,7 @@
     if (self.previewBackgroundColor != nil) {
         [self.view.subviews enumerateObjectsUsingBlock:^(UIView* view, NSUInteger idx, BOOL *stop) {
             [view setBackgroundColor:self.previewBackgroundColor];
+            [view setClipsToBounds:YES];
         }];
     }
 }
@@ -33,7 +35,6 @@
 
 @property UIView* previewView;
 @property RNQLPreviewController* previewCtrl;
-
 @end
 
 @implementation RNFilesView
@@ -57,6 +58,7 @@ static void *changePageContext = &changePageContext;
     self.previewView = self.previewCtrl.view;
     self.clipsToBounds = YES;
     [self addSubview:self.previewCtrl.view];
+
     [self.previewCtrl addObserver:self forKeyPath:@"currentPreviewItemIndex" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:changePageContext];
     [self addObserver:self forKeyPath:@"onFileChange" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:changePageContext];
 }
